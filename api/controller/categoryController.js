@@ -5,6 +5,7 @@ const Op = db.Sequelize.Op;
 const { GeneralError, NotFound, BadRequest } = require('../service/error');
 const { GeneralResponse } = require('../service/response');
 
+//Finding all data from category
 exports.findAll = async (req, res, next) => {
     try {
         const category = await categoryModel.findAll();
@@ -20,6 +21,7 @@ exports.findAll = async (req, res, next) => {
     }
 }
 
+//Finding a particular data with id from category
 exports.findById = async (req, res, next) => {
     let id = await req.params.id
     try {
@@ -36,6 +38,7 @@ exports.findById = async (req, res, next) => {
     }
 }
 
+//Post a category
 exports.create = async (req, res, next) => {
     if (!req.body) {
         next(new BadRequest('can not be empty'));
@@ -59,6 +62,8 @@ exports.create = async (req, res, next) => {
     }
 }
 
+//Update category with id
+//Featching id with url
 exports.update = async (req,res,next) => {
     
     const id = await req.params.id;
@@ -77,6 +82,8 @@ exports.update = async (req,res,next) => {
     }
 }
 
+//Delete category with id
+//Featching id with url
 exports.delete = async (req,res,next) => {
     const id = await req.params.id
 
@@ -95,6 +102,8 @@ exports.delete = async (req,res,next) => {
     }
 }
 
+//Delete multiple category with id
+//first store all id in array then pass to query
 exports.deleteAll = async (req,res,next) => {
     const id = req.body.id
     try{

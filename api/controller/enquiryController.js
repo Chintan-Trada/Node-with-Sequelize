@@ -5,6 +5,8 @@ const Op = db.Sequelize.Op;
 const { GeneralError, NotFound, BadRequest } = require('../service/error');
 const { GeneralResponse } = require('../service/response');
 
+
+//Finding all data from enquiry
 exports.findAll = async (req,res,next) => {
     try{
         const enquiry = await enquiryModel.findAll();
@@ -21,6 +23,7 @@ exports.findAll = async (req,res,next) => {
     }
 }
 
+//Finding a particular data with id from enquiry
 exports.findById = async (req,res,next) => {
     const id = await req.params.id;
 
@@ -38,6 +41,7 @@ exports.findById = async (req,res,next) => {
     }
 }
 
+//Post a enquiry
 exports.create = async (req,res,next) => {
     const enquiryPost = await{
         firstName: req.body.firstName,
@@ -60,6 +64,8 @@ exports.create = async (req,res,next) => {
     }
 }
 
+//Update enquiry with id
+//Featching id with url
 exports.update = async (req,res,next) => {
     const id = await req.params.id;
 
@@ -78,6 +84,8 @@ exports.update = async (req,res,next) => {
     }
 }
 
+//Delete enquiry with id
+//Featching id with url
 exports.delete = async (req,res,next) => {
     const id = await req.params.id;
 
@@ -95,6 +103,8 @@ exports.delete = async (req,res,next) => {
     }
 }
 
+//Delete multiple enquiry with id
+//first store all id in array then pass to query
 exports.deleteMultiple = async (req,res,next) => {
     const id = req.body.id;
 

@@ -1,6 +1,8 @@
 const { GeneralError, BadRequest } = require('../service/error');
 const config = require("../service/config");
 
+
+//
 const handleErrors = (err, req, res, next) => {
   if (err instanceof GeneralError) {
     return res.status(err.statusCode !== "" ? err.statusCode : err.getCode()).json({

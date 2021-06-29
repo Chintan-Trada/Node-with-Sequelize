@@ -1,5 +1,6 @@
 const config = require("./config");
 
+//Handling all kind of error
 class GeneralError extends Error {
   constructor(message, result = "", statusCode = "") {
     super();

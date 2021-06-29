@@ -1,20 +1,24 @@
 
 module.exports = (sequelize, Sequelize) => {
-    const portfolioModel = sequelize.define('portfolio',{
-        projectName:{
+    const portfolioModel = sequelize.define('portfolio', {
+        projectName: {
             type: Sequelize.STRING,
             allowNull: false,
-            trim:true
+            trim: true
         },
-        projectCategory :{
+        projectCategory: {
             type: Sequelize.STRING,
             allowNull: false,
-            trim:true
+            trim: true
         },
-        discription:{
+        discription: {
             type: Sequelize.STRING(1000),
             allowNull: false,
-            trim:true
+            trim: true
+        },
+        image: {
+            type: Sequelize.STRING,
+            // allowNull: false
         }
     })
 

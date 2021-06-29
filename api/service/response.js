@@ -1,6 +1,8 @@
   
 const config = require('./config');
 
+
+//Handling Responce coming from database
 class GeneralResponse { 
     constructor(message,result,statusCode = "") { 
         this.message = message;

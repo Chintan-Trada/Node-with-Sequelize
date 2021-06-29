@@ -9,6 +9,10 @@ module.exports = (sequelize, Sequelize) =>{
             type: Sequelize.STRING(1000),
             allowNull: false,
             trim: true
+        },
+        image: {
+            type: Sequelize.JSON,
+            // allowNull: false
         }
     });
     
